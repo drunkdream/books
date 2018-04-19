@@ -230,21 +230,6 @@
                 <a class="category-link" href="/fairystory/">fairystory</a><i class="icon icon-angle-right"></i><a class="category-link" href="/fairystory/andersens-fairytales/">andersens-fairytales</a>
               </p>
               <p class="item-title">
-                <a href="/fairystory/andersens-fairytales/laoshangdihuanmeiyoumiewang.html" class="title">老上帝还没有灭亡</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-17T03:22:20.000Z" itemprop="datePublished">2018-04-17</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/fairystory/">fairystory</a><i class="icon icon-angle-right"></i><a class="category-link" href="/fairystory/andersens-fairytales/">andersens-fairytales</a>
-              </p>
-              <p class="item-title">
                 <a href="/fairystory/andersens-fairytales/wawabao.html" class="title">哇哇报</a>
               </p>
               <p class="item-date">
@@ -261,6 +246,21 @@
               </p>
               <p class="item-title">
                 <a href="/fairystory/andersens-fairytales/yuyanshuozhejiushiniya.html" class="title">寓言说这就是你呀</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-17T03:22:20.000Z" itemprop="datePublished">2018-04-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/fairystory/">fairystory</a><i class="icon icon-angle-right"></i><a class="category-link" href="/fairystory/andersens-fairytales/">andersens-fairytales</a>
+              </p>
+              <p class="item-title">
+                <a href="/fairystory/andersens-fairytales/shufajia.html" class="title">书法家</a>
               </p>
               <p class="item-date">
                 <time datetime="2018-04-17T03:22:20.000Z" itemprop="datePublished">2018-04-17</time>
@@ -345,7 +345,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="//book.drunkdream.com/fairystory/grimms-fairytales/" title="甜粥" target="_blank" rel="external"><script>document.write(location.protocol);</script>//book.drunkdream.com/fairystory/grimms-fairytales/</a>
+      <a href="https://book.drunkdream.com/fairystory/grimms-fairytales/" title="甜粥" target="_blank" rel="external">https://book.drunkdream.com/fairystory/grimms-fairytales/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -378,8 +378,10 @@
   <section id="comments">
   	
        
-    <div id="uyan_frame"></div>
-
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTgzOC8xMjM3NA==">
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+      
     
   </section>
 
@@ -393,12 +395,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/fairystory/grimms-fairytales/landeng.html" title="蓝灯"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/fairystory/grimms-fairytales/shanquehexiong.html" title="山雀和熊"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/fairystory/grimms-fairytales/hamadegushi.html" title="蛤蟆的故事"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/fairystory/grimms-fairytales/laizitiantangdelianjia.html" title="来自天堂的连枷"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -510,10 +512,116 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
     
     
     
+        
+
+
+<!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script defer>
+AV.init({
+  appId: 'Tl4KfN430PcyoiLEd34J95Cx-gzGzoHsz',
+  appKey: 'M6ia7SAx3xNTQ8SMIXzJdqst'
+});
+
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+		var visitors= $('.leancloud_visitors');
+		query.greaterThanOrEqualTo("time", 0);		
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {				
+					return;
+				}
+				var data = results;
+				visitors.each(function(){
+					var url = $(this).attr('id').trim();					
+					for (var i = 0; i < data.length; i++) {
+						var object = data[i];
+						var content = object.get('time');
+						var _url = object.get('url')
+						if(url == _url){
+							$(this).text(content);
+						}
+					}
+				})
+				
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else {
+		showTime(Counter);
+	}
+}); 
+</script>
+
+    
     
         
     
-    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+<script defer type="text/javascript">
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+
+    if (typeof LivereTower === 'function') { return; }
+
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
 
 
     
