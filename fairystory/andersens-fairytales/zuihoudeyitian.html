@@ -110,7 +110,7 @@
         
         
         
-        <li class="menu-item menu-item-fairystory">
+        <li class="menu-item menu-item-fairystory active">
           <a href="/fairystory">
             
             <i class="icon icon-archives-fill"></i>
@@ -121,7 +121,7 @@
         
         
         
-        <li class="menu-item menu-item-classic active">
+        <li class="menu-item menu-item-classic">
           <a href="/classic">
             
             <i class="icon icon-folder"></i>
@@ -197,6 +197,36 @@
             
             <div class="item-inner">
               <p class="item-category">
+                <a class="category-link" href="/fairystory/">fairystory</a><i class="icon icon-angle-right"></i><a class="category-link" href="/fairystory/zhengyuanjie-fairytales/">zhengyuanjie-fairytales</a>
+              </p>
+              <p class="item-title">
+                <a href="/fairystory/zhengyuanjie-fairytales/shukehebeitalixianji.html" class="title">舒克和贝塔历险记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-03T12:10:36.000Z" itemprop="datePublished">2018-05-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/fairystory/">fairystory</a><i class="icon icon-angle-right"></i><a class="category-link" href="/fairystory/zhengyuanjie-fairytales/">zhengyuanjie-fairytales</a>
+              </p>
+              <p class="item-title">
+                <a href="/fairystory/zhengyuanjie-fairytales/index.html" class="title">郑渊洁童话</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-03T11:44:49.000Z" itemprop="datePublished">2018-05-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
                 <a class="category-link" href="/classic/">classic</a><i class="icon icon-angle-right"></i><a class="category-link" href="/classic/shuihuzhuan/">shuihuzhuan</a>
               </p>
               <p class="item-title">
@@ -234,36 +264,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2018-04-25T11:07:22.000Z" itemprop="datePublished">2018-04-25</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/classic/">classic</a><i class="icon icon-angle-right"></i><a class="category-link" href="/classic/shuihuzhuan/">shuihuzhuan</a>
-              </p>
-              <p class="item-title">
-                <a href="/classic/shuihuzhuan/diyibaiyishiqihui.html" class="title">第一百一十七回　睦州城箭射邓元觉　乌龙岭神助宋公明</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-25T11:07:19.000Z" itemprop="datePublished">2018-04-25</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/classic/">classic</a><i class="icon icon-angle-right"></i><a class="category-link" href="/classic/shuihuzhuan/">shuihuzhuan</a>
-              </p>
-              <p class="item-title">
-                <a href="/classic/shuihuzhuan/diyibaiyishiliuhui.html" class="title">第一百一十六回　卢俊义分兵歙州道　宋公明大战乌龙岭</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-25T11:07:17.000Z" itemprop="datePublished">2018-04-25</time>
               </p>
             </div>
           </li>
@@ -432,12 +432,12 @@
     
     
     <li class="next">
-      <a href="/fairystory/andersens-fairytales/yiniandegushi.html" title="一年的故事"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
+      <a href="/fairystory/andersens-fairytales/chenshanlingzi.html" title="衬衫领子"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
     </li>
     
     
     <li class="prev">
-      <a href="/fairystory/andersens-fairytales/yama.html" title="亚麻"><span>&nbsp;&nbsp;下一篇</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/fairystory/andersens-fairytales/wanquanshizhende.html" title="完全是真的"><span>&nbsp;&nbsp;下一篇</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -522,7 +522,7 @@
 </footer>
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')
 </script>
 <script src="/js/plugin.min.js"></script>
 <script src="/js/application.js"></script>
@@ -649,15 +649,31 @@ $(function() {
     
 <script defer type="text/javascript">
   (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-
-    if (typeof LivereTower === 'function') { return; }
-
-    j = d.createElement(s);
-    j.src = '//cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-
-    e.parentNode.insertBefore(j, e);
+    var js_src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    var js_id = 'livere_js';
+    if($('#lv-container iframe').length > 0) { return; }
+    
+    var load_js_func = function(){
+        var j, e = d.getElementsByTagName(s)[0];
+        j = d.createElement(s);
+        j.id = js_id;
+        j.src = js_src + '?t=' + Math.random();
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    }
+    
+    var retry_func = function(){
+        if((typeof LivereTower === 'object') && $('#lv-container iframe').length == 0){
+            var e = d.getElementsByTagName(s)[0];
+            e.parentNode.removeChild(document.getElementById(js_id));
+            console.log('reload livere');
+            load_js_func();
+            setTimeout(retry_func, 1000);
+        }
+    };
+    
+    load_js_func();
+    setTimeout(retry_func, 1000);
   })(document, 'script');
 </script>
 
