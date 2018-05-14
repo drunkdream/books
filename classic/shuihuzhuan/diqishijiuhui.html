@@ -110,7 +110,7 @@
         
         
         
-        <li class="menu-item menu-item-fairystory active">
+        <li class="menu-item menu-item-fairystory">
           <a href="/fairystory">
             
             <i class="icon icon-archives-fill"></i>
@@ -121,7 +121,7 @@
         
         
         
-        <li class="menu-item menu-item-classic">
+        <li class="menu-item menu-item-classic active">
           <a href="/classic">
             
             <i class="icon icon-folder"></i>
@@ -391,15 +391,9 @@
   </article>
   
     
-  <section id="comments">
+  <div id="comments">
   	
-       
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTg0Ni8xMjM4Mg==">
-  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-      
-    
-  </section>
+  </div>
 
 
   
@@ -625,38 +619,21 @@ $(function() {
 
     
     
-        
-    
+          
+    <script src='/js/Valine.min.js'></script>
 <script defer type="text/javascript">
-  (function(d, s) {
-    var js_src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    var js_id = 'livere_js';
-    if($('#lv-container iframe').length > 0) { return; }
-    
-    var load_js_func = function(){
-        var j, e = d.getElementsByTagName(s)[0];
-        j = d.createElement(s);
-        j.id = js_id;
-        j.src = js_src + '?t=' + Math.random();
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-    }
-    
-    var retry_func = function(){
-        if((typeof LivereTower === 'object') && $('#lv-container iframe').length == 0){
-            var e = d.getElementsByTagName(s)[0];
-            e.parentNode.removeChild(document.getElementById(js_id));
-            console.log('reload livere');
-            load_js_func();
-            setTimeout(retry_func, 1000);
-        }
-    };
-    
-    load_js_func();
-    setTimeout(retry_func, 1000);
-  })(document, 'script');
+new Valine({
+    el: '#comments',
+    notify:false, 
+    verify:false, 
+    appId: 'Tl4KfN430PcyoiLEd34J95Cx-gzGzoHsz',
+    appKey: 'M6ia7SAx3xNTQ8SMIXzJdqst',
+    placeholder: '欢迎发表评论',
+    path:window.location.pathname, 
+    avatar:'mm' ,
+    lang:'zh-cn'
+});
 </script>
-
 
     
     
