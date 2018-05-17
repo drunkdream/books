@@ -110,7 +110,7 @@
         
         
         
-        <li class="menu-item menu-item-fairystory">
+        <li class="menu-item menu-item-fairystory active">
           <a href="/fairystory">
             
             <i class="icon icon-archives-fill"></i>
@@ -121,7 +121,7 @@
         
         
         
-        <li class="menu-item menu-item-classic active">
+        <li class="menu-item menu-item-classic">
           <a href="/classic">
             
             <i class="icon icon-folder"></i>
@@ -599,7 +599,7 @@
     
     
     <li class="next">
-      <a href="/fairystory/1001night-stories/tuobeidegushi.html" title="驼背的故事"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
+      <a href="/fairystory/1001night-stories/xiranjianghelifashidegushi.html" title="洗染匠和理发师的故事"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
     </li>
     
     
@@ -815,16 +815,18 @@ $(function() {
           
     <script src='/js/Valine.min.js'></script>
 <script defer type="text/javascript">
-new Valine({
-    el: '#comments',
-    notify:false, 
-    verify:false, 
-    appId: '',
-    appKey: '',
-    placeholder: '欢迎发表评论',
-    path:window.location.pathname, 
-    avatar:'mm' ,
-    lang:'zh-cn'
+$(document).ready(function(){
+    new Valine({
+        el: '#comments',
+        notify:false, 
+        verify:false, 
+        appId: '',
+        appKey: '',
+        placeholder: '欢迎发表评论',
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        lang:'zh-cn'
+    });
 });
 </script>
 

@@ -110,7 +110,7 @@
         
         
         
-        <li class="menu-item menu-item-fairystory">
+        <li class="menu-item menu-item-fairystory active">
           <a href="/fairystory">
             
             <i class="icon icon-archives-fill"></i>
@@ -121,7 +121,7 @@
         
         
         
-        <li class="menu-item menu-item-classic active">
+        <li class="menu-item menu-item-classic">
           <a href="/classic">
             
             <i class="icon icon-folder"></i>
@@ -405,12 +405,12 @@
     
     
     <li class="next">
-      <a href="/fairystory/grimms-fairytales/shiergelanhan.html" title="十二个懒汉"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
+      <a href="/fairystory/grimms-fairytales/liuzhitiane.html" title="六只天鹅"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
     </li>
     
     
     <li class="prev">
-      <a href="/fairystory/grimms-fairytales/meiguigongzhu.html" title="玫瑰公主"><span>&nbsp;&nbsp;下一篇</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/fairystory/grimms-fairytales/haierkebeisi.html" title="海尔·柯贝斯"><span>&nbsp;&nbsp;下一篇</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -621,16 +621,18 @@ $(function() {
           
     <script src='/js/Valine.min.js'></script>
 <script defer type="text/javascript">
-new Valine({
-    el: '#comments',
-    notify:false, 
-    verify:false, 
-    appId: '',
-    appKey: '',
-    placeholder: '欢迎发表评论',
-    path:window.location.pathname, 
-    avatar:'mm' ,
-    lang:'zh-cn'
+$(document).ready(function(){
+    new Valine({
+        el: '#comments',
+        notify:false, 
+        verify:false, 
+        appId: '',
+        appKey: '',
+        placeholder: '欢迎发表评论',
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        lang:'zh-cn'
+    });
 });
 </script>
 

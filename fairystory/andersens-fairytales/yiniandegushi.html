@@ -110,7 +110,7 @@
         
         
         
-        <li class="menu-item menu-item-fairystory">
+        <li class="menu-item menu-item-fairystory active">
           <a href="/fairystory">
             
             <i class="icon icon-archives-fill"></i>
@@ -121,7 +121,7 @@
         
         
         
-        <li class="menu-item menu-item-classic active">
+        <li class="menu-item menu-item-classic">
           <a href="/classic">
             
             <i class="icon icon-folder"></i>
@@ -444,12 +444,12 @@
     
     
     <li class="next">
-      <a href="/fairystory/andersens-fairytales/chenshanlingzi.html" title="衬衫领子"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
+      <a href="/fairystory/andersens-fairytales/laomubei.html" title="老墓碑"><i class="icon icon-angle-left" aria-hidden="true"></i><span>上一篇&nbsp;&nbsp;</span></a>
     </li>
     
     
     <li class="prev">
-      <a href="/fairystory/andersens-fairytales/yibenbushuohuadeshu.html" title="一本不说话的书"><span>&nbsp;&nbsp;下一篇</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/fairystory/andersens-fairytales/zuihoudeyitian.html" title="最后的一天"><span>&nbsp;&nbsp;下一篇</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -660,16 +660,18 @@ $(function() {
           
     <script src='/js/Valine.min.js'></script>
 <script defer type="text/javascript">
-new Valine({
-    el: '#comments',
-    notify:false, 
-    verify:false, 
-    appId: '',
-    appKey: '',
-    placeholder: '欢迎发表评论',
-    path:window.location.pathname, 
-    avatar:'mm' ,
-    lang:'zh-cn'
+$(document).ready(function(){
+    new Valine({
+        el: '#comments',
+        notify:false, 
+        verify:false, 
+        appId: '',
+        appKey: '',
+        placeholder: '欢迎发表评论',
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        lang:'zh-cn'
+    });
 });
 </script>
 
